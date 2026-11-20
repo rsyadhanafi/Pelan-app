@@ -1,0 +1,10 @@
+{
+  "description": "A personal daily planner and quit-smoking tracker that helps users manage cigarette limits, resist cravings, complete tasks, and build healthier routines.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

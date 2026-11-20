@@ -1,0 +1,1456 @@
+.app {
+  --action-bg: #202020;
+  --action-text: #fff;
+  padding-top: 28px;
+  background-size: 42px 42px;
+  font-size: 15px;
+  letter-spacing: -0.3px;
+}
+.app.dark {
+  --action-bg: #f5f5f3;
+  --action-text: #1d1d1d;
+}
+.page-shell {
+  max-width: 1120px;
+}
+.app .navbar {
+  --nav-offset: 20px;
+  position: sticky;
+  top: 20px;
+  z-index: 45;
+  height: 76px;
+  padding: 0 24px 0 29px;
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-color: color-mix(in srgb, var(--border) 80%, transparent);
+  transition:
+    transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.2s;
+}
+.app .navbar.is-scroll-hidden {
+  transform: translateY(calc(-100% - var(--nav-offset) - 16px));
+  opacity: 0;
+  pointer-events: none;
+}
+.app .navbar.is-scroll-hidden ~ .recovery-banner {
+  top: var(--recovery-scroll-top, 20px);
+}
+.brand {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -1.8px;
+}
+.brand-symbol {
+  width: 29px;
+  height: 29px;
+  background: var(--text);
+  color: var(--bg);
+}
+.brand-dot {
+  color: var(--text);
+}
+.nav-links {
+  gap: 30px;
+  margin-left: 30px;
+}
+.nav-links button {
+  font-size: 12px;
+}
+.nav-links button.active::after {
+  background: var(--text);
+  bottom: 3px;
+}
+.nav-actions {
+  gap: 3px;
+}
+.target-pill {
+  font-size: 10px;
+  background: var(--text);
+  color: var(--bg);
+  min-height: 39px;
+}
+.target-pill > span {
+  background: currentColor;
+}
+.theme-button {
+  margin-right: 8px;
+}
+.menu-toggle,
+.mobile-nav-item {
+  display: none;
+}
+.dashboard-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 24px 5px 18px;
+}
+.dashboard-topline > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 8px;
+  font-weight: 500;
+  letter-spacing: 1.35px;
+}
+.dashboard-topline > span .status-dot {
+  background: var(--muted);
+  width: 4px;
+  height: 4px;
+}
+.prototype-tools {
+  position: relative;
+  z-index: 35;
+}
+.prototype-tools > summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 30px;
+  font-size: 10px;
+  color: var(--muted);
+  cursor: pointer;
+  list-style: none;
+}
+.prototype-tools > summary::-webkit-details-marker {
+  display: none;
+}
+.prototype-tools > summary > svg {
+  transform: rotate(90deg);
+  transition: transform 0.2s;
+}
+.prototype-tools[open] > summary > svg {
+  transform: rotate(-90deg);
+}
+.prototype-tools .simulation-toolbar {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 290px;
+  margin: 0;
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+  justify-content: flex-start;
+  gap: 12px;
+  box-shadow: 0 12px 30px #00000012;
+}
+.simulation-toolbar > span {
+  width: 100%;
+}
+.simulation-controls {
+  width: 100%;
+}
+.simulation-controls button {
+  flex: 1;
+  min-height: 40px;
+}
+.simulation-indicator {
+  display: inline;
+  font-size: 8px;
+}
+.storage-fallback {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 0 4px 16px;
+}
+.exit-simulation {
+  min-height: 34px;
+}
+.app .hero-card {
+  display: flex;
+  min-height: 640px;
+  padding: 0;
+  border-radius: 36px;
+  border-color: var(--border);
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--hero) 85%, #fff),
+    var(--hero) 55%,
+    color-mix(in srgb, var(--hero) 96%, #000)
+  );
+}
+.app.dark .hero-card {
+  background: linear-gradient(125deg, #383838 0%, #2c2c2c 48%, #1b1b1b 100%);
+}
+.app .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 56%;
+  padding: 42px 0 38px 42px;
+  position: relative;
+  z-index: 6;
+}
+.app .page-heading {
+  display: block;
+  padding: 0;
+  margin-bottom: 27px;
+}
+.hero-greeting {
+  font-size: 16px;
+  color: var(--muted);
+}
+.hero-greeting strong {
+  font-weight: 600;
+  color: var(--text);
+}
+.app .page-heading h1 {
+  font-size: clamp(44px, 4.7vw, 62px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -2.5px;
+  margin: 13px 0 17px;
+}
+.app .page-heading h1 .blue {
+  color: inherit;
+}
+.app .page-heading p {
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 370px;
+  color: var(--muted);
+}
+.app .hero-content > .section-label {
+  color: var(--muted);
+  font-size: 8px;
+  letter-spacing: 1.3px;
+}
+.app .hero-content h2 {
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  margin-top: 14px;
+  font-weight: 500;
+}
+.app .quota-display {
+  margin: 6px 0 12px;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -3px;
+  gap: 10px;
+}
+.app .quota-divider {
+  font-size: 44px;
+  color: var(--muted);
+  font-weight: 400;
+  margin: 0 2px;
+}
+.app .quota-target {
+  color: var(--muted);
+}
+.app .quota-unit {
+  font-size: 15px;
+  color: var(--muted);
+  margin-left: 5px;
+  letter-spacing: -0.3px;
+}
+.app .hero-caption {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 390px;
+}
+.app .hero-caption strong {
+  color: var(--text);
+  font-weight: 600;
+}
+.app .quota-track {
+  width: min(100%, 342px);
+  height: 3px;
+  margin-top: 19px;
+  background: var(--raised);
+}
+.app .quota-track > span {
+  background: var(--text);
+}
+.app .track-label {
+  width: min(100%, 342px);
+  color: var(--muted);
+  font-size: 9px;
+  margin-top: 9px;
+  gap: 10px;
+  line-height: 1.6;
+}
+.app .button {
+  font-size: 12px;
+  font-weight: 600;
+  min-height: 47px;
+}
+.app .primary {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+.app .primary:hover {
+  background: color-mix(in srgb, var(--action-bg) 85%, var(--muted));
+}
+.app .outline {
+  border-color: var(--border);
+  color: var(--text);
+}
+.app .outline:hover {
+  background: var(--raised);
+}
+.app .hero-content > .button {
+  margin-top: 24px;
+  min-height: 50px;
+  padding: 0 24px;
+  gap: 35px;
+}
+.app .hero-footnote {
+  color: var(--muted);
+  font-size: 8px;
+  margin-top: 16px;
+  gap: 7px;
+  line-height: 1.7;
+}
+.app .hero-corner-label {
+  font-size: 7px;
+  bottom: 28px;
+  right: 30px;
+  color: var(--muted);
+  letter-spacing: 1.4px;
+}
+.app .hero-corner-label > span {
+  background: var(--muted);
+}
+.app .hanging-scene {
+  width: 47%;
+  height: 100%;
+  right: 0;
+  top: 0;
+}
+.app .scene-orbit {
+  width: 330px;
+  height: 330px;
+  left: 48%;
+  top: 48%;
+  border-color: color-mix(in srgb, var(--text) 6%, transparent);
+}
+.app .orbit-two {
+  width: 430px;
+  height: 430px;
+}
+.app .scene-plus {
+  color: color-mix(in srgb, var(--text) 25%, transparent);
+  font-size: 18px;
+}
+.app .plus-one {
+  top: 30%;
+  left: 8%;
+}
+.app .plus-two {
+  bottom: 26%;
+  right: 9%;
+}
+.app .hanging-object {
+  left: 23%;
+  top: -25px;
+  width: 228px;
+  height: 482px;
+}
+.app .lanyard {
+  height: 164px;
+}
+.app .lanyard > span {
+  left: 95px;
+  width: 21px;
+  height: 166px;
+  transform: rotate(5deg);
+  background: #191919;
+  border-left: 1px solid #474747;
+}
+.app .lanyard > span + span {
+  left: 111px;
+  transform: rotate(-5deg);
+  background: #232323;
+  border-right: 1px solid #444;
+  border-left: 0;
+}
+.lanyard-brand {
+  position: absolute;
+  z-index: 2;
+  left: 93px;
+  top: 80px;
+  color: #f4f4f2;
+  font-size: 12px;
+  letter-spacing: -0.8px;
+  transform: rotate(-2deg);
+}
+.lanyard-clip {
+  position: absolute;
+  z-index: 6;
+  left: 95px;
+  top: 145px;
+  width: 39px;
+  height: 43px;
+  border: 2px solid #b9b9b6;
+  border-top-color: #777;
+  border-radius: 5px 5px 22px 22px;
+  box-shadow:
+    inset 2px 0 #f8f8f455,
+    2px 0 #33333355;
+}
+.lanyard-clip > i {
+  position: absolute;
+  left: 15px;
+  top: 30px;
+  height: 30px;
+  width: 8px;
+  border: 2px solid #d5d5d0;
+  border-radius: 6px;
+  transform: rotate(9deg);
+}
+.app .quota-tag {
+  width: 228px;
+  height: 306px;
+  background: #f1f1ed;
+  color: #242424;
+  border: 1px solid #fff;
+  border-radius: 18px;
+  padding: 27px 13px 13px;
+  box-shadow: 0 10px 17px #00000018;
+}
+.app .tag-slot {
+  background: #222;
+  width: 42px;
+  height: 7px;
+  left: calc(50% - 21px);
+  top: 11px;
+}
+.app .tag-top {
+  gap: 5px;
+  margin: 0 3px 10px;
+}
+.app .tag-top > svg {
+  width: 14px;
+  height: 14px;
+}
+.app .tag-top > span {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+.tag-top > small {
+  margin-left: auto;
+  color: #777;
+  font-size: 4.5px;
+  letter-spacing: 0.5px;
+}
+.tag-face {
+  background: #262626;
+  border-radius: 12px;
+  color: #f5f5f2;
+  padding: 18px 15px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.app .tag-label {
+  font-size: 7px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  margin-top: 0;
+  opacity: 0.7;
+}
+.app .tag-number {
+  font-size: 86px;
+  font-weight: 600;
+  letter-spacing: -5px;
+  gap: 7px;
+  line-height: 1.05;
+}
+.app .tag-number > span {
+  font-size: 10px;
+  letter-spacing: -0.3px;
+  font-weight: 400;
+}
+.tag-face-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 4.5px;
+  color: #aaa;
+  letter-spacing: 0.6px;
+  margin-top: 7px;
+}
+.tag-face-meta > span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #b8ceb5;
+}
+.app .tag-bottom {
+  margin: 13px 4px 0;
+}
+.app .tag-bottom > span:first-child {
+  font-size: 9px;
+  color: #51514d;
+  line-height: 1.55;
+  font-weight: 500;
+  opacity: 1;
+}
+.app .tag-bottom > span:first-child::first-line {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-style: italic;
+}
+.app .tag-star {
+  color: #333;
+}
+.app .cig-cluster {
+  top: 47%;
+  right: 12%;
+  transform: scale(0.75);
+  transform-origin: 100% 50%;
+  z-index: 4;
+}
+.app .drag-hint {
+  color: var(--muted);
+  left: 21%;
+  bottom: 80px;
+  font-size: 13px;
+}
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 42px 4px 20px;
+}
+.section-heading .eyebrow {
+  font-size: 8px;
+  letter-spacing: 1.5px;
+}
+.section-heading h2 {
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -1.25px;
+  line-height: 1.25;
+  margin-top: 9px;
+}
+.section-heading h2 .blue {
+  color: inherit;
+}
+.section-date {
+  color: var(--muted);
+  font-size: 10px;
+  white-space: nowrap;
+  padding-bottom: 3px;
+}
+.app .dashboard-grid {
+  gap: 22px;
+  margin-top: 0;
+}
+.app .card {
+  padding: 28px;
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  background: var(--surface);
+}
+.app .card-topline {
+  margin-bottom: 21px;
+}
+.app .card-icon {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.app .blue-tint {
+  background: var(--raised);
+  color: var(--text);
+}
+.app .card h2 {
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+  line-height: 1.3;
+}
+.app .card-description {
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 7px;
+}
+.app .live-badge {
+  color: var(--muted);
+  background: var(--raised);
+  font-size: 6px;
+  letter-spacing: 1px;
+  padding: 8px 10px;
+}
+.app .live-badge > span {
+  background: #b8ceb5;
+}
+.app .subtle-badge {
+  font-size: 9px;
+  padding: 7px 10px;
+}
+.app .countdown-block {
+  margin: 25px 0 23px;
+}
+.app .countdown-number {
+  font-weight: 600;
+  font-size: 42px;
+  letter-spacing: -1.5px;
+  padding-right: 23px;
+}
+.app .countdown-number > span {
+  font-size: 10px;
+  letter-spacing: -0.2px;
+  max-width: 100px;
+  line-height: 1.5;
+}
+.app .countdown-target {
+  padding-left: 22px;
+  font-size: 10px;
+  line-height: 1.7;
+}
+.app .schedule-pills {
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.app .schedule-pills button {
+  border-radius: 9999px;
+  min-height: 36px;
+  font-size: 10px;
+  padding: 0 12px;
+}
+.app .schedule-pills button.selected {
+  background: var(--action-bg);
+  color: var(--action-text);
+  border-color: transparent;
+}
+.app .card-buttons {
+  gap: 10px;
+}
+.app .card-buttons .button {
+  font-size: 10px;
+  padding: 0 16px;
+  gap: 10px;
+  min-height: 46px;
+}
+.app .task-row {
+  min-height: 71px;
+  gap: 12px;
+}
+.app .task-text > span {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+  display: block;
+}
+.app .task-text > small {
+  font-size: 9px;
+  margin-top: 5px;
+}
+.app .task-checkbox {
+  width: 24px;
+  height: 24px;
+  border-color: var(--muted);
+}
+.app .is-done .task-checkbox {
+  color: var(--bg);
+  background: var(--text);
+  border-color: var(--text);
+}
+.app .break-task {
+  font-size: 7px;
+  border-radius: 9999px;
+  padding: 0 9px;
+  height: 31px;
+}
+.app .task-footnote {
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 18px;
+}
+.app .bottom-note {
+  font-size: 10px;
+  margin: 27px 5px 32px;
+  line-height: 1.8;
+}
+.app .bottom-note > svg {
+  color: var(--muted);
+}
+.site-footer {
+  padding-top: 23px;
+  padding-bottom: 125px;
+}
+.site-footer > span:first-child {
+  font-size: 22px;
+  font-weight: 700;
+}
+.footer-tagline {
+  font-size: 9px;
+}
+.app .floating-checkin {
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+  padding: 10px;
+  bottom: 20px;
+  gap: 12px;
+  border-color: var(--border);
+  box-shadow: 0 5px 20px #0000000a;
+}
+.app .checkin-moon {
+  width: 38px;
+  height: 38px;
+  background: var(--raised);
+}
+.app .floating-checkin strong {
+  font-size: 10px;
+  font-weight: 500;
+}
+.app .floating-checkin > div > span {
+  font-size: 8px;
+}
+.app .floating-checkin > button {
+  color: var(--action-text);
+  background: var(--action-bg);
+  font-size: 10px;
+  font-weight: 600;
+  height: 45px;
+  padding: 0 20px;
+}
+.app .subpage-back {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.app .center-heading h1 {
+  font-size: 46px;
+  font-weight: 700;
+  letter-spacing: -1.8px;
+}
+.app .center-heading > p {
+  font-size: 13px;
+  line-height: 1.9;
+}
+.app .mission-card {
+  background: var(--surface);
+  border-color: var(--border);
+  border-radius: 34px;
+}
+.app .big-button {
+  min-height: 58px;
+  font-size: 14px;
+}
+.app .big-button > span {
+  background: color-mix(in srgb, var(--action-text) 10%, transparent);
+}
+.app .mission-timer {
+  font-size: 75px;
+  font-weight: 600;
+  letter-spacing: -4px;
+}
+.app .step-circle.active {
+  background: var(--action-bg);
+  border-color: transparent;
+  color: var(--action-text);
+}
+.app .step-circle.completed {
+  background: var(--raised);
+  color: var(--text);
+}
+.app .stepper-item > span.filled {
+  background: var(--muted);
+}
+.app .checkin-intro h1 {
+  font-size: 54px;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+.app .checkin-intro > p {
+  font-size: 14px;
+  line-height: 1.85;
+}
+.app .checkin-quote {
+  color: var(--muted);
+}
+.app .activity-option {
+  border-radius: 13px;
+  min-height: 78px;
+}
+.app .activity-option.active {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+.app .activity-option > svg:first-child {
+  color: var(--muted);
+}
+.app .activity-option.active > svg {
+  color: var(--action-text);
+}
+.app .mood-options > button {
+  border-radius: 9999px;
+  min-height: 44px;
+}
+.app .mood-options > button.active {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+.app .mood-illustration {
+  color: var(--text);
+}
+.app .round-button {
+  background: var(--action-bg);
+  color: var(--action-text);
+}
+.app .counter-over-limit .round-button {
+  background: #ff3b30;
+  color: #fff;
+}
+.app .mood-Stres {
+  color: #d48c70;
+}
+.app .notification-settings > p {
+  font-size: 13px;
+  line-height: 1.85;
+}
+.app .notification-schedules small {
+  line-height: 1.7;
+}
+.app .recovery-banner {
+  top: 108px;
+  border-radius: 22px;
+}
+.app.red-alert {
+  --action-bg: var(--blue);
+  --action-text: #fff;
+}
+.app.red-alert .hero-card {
+  background: var(--hero);
+  border-color: rgba(255, 59, 48, 0.35);
+}
+.app.red-alert .hero-content > .section-label,
+.app.red-alert .track-label {
+  color: var(--blue);
+}
+.app.red-alert .hero-content h1 .blue {
+  color: var(--blue);
+}
+.app.red-alert .brand-dot {
+  color: var(--blue);
+}
+.app.red-alert .quota-target {
+  color: color-mix(in srgb, var(--blue) 45%, var(--muted));
+}
+.app.red-alert .quota-track > span,
+.app.red-alert .is-done .task-checkbox {
+  background: var(--blue);
+}
+.app.red-alert .is-done .task-checkbox {
+  color: #fff;
+  border-color: var(--blue);
+}
+.app.red-alert .quota-tag {
+  color: #fff;
+  background: #e11d48;
+  border-color: #f34b6f;
+}
+.app.red-alert.dark .quota-tag {
+  background: #ff3b30;
+  border-color: #ff675f;
+}
+.app.red-alert .tag-face {
+  background: #411419;
+  color: #fff;
+}
+.app.red-alert .tag-top > small,
+.app.red-alert .tag-face-meta,
+.app.red-alert .tag-bottom > span:first-child,
+.app.red-alert .tag-star {
+  color: #fff;
+}
+.app.red-alert .tag-label {
+  opacity: 1;
+}
+.app.red-alert .tag-face-meta > span {
+  background: #ffb5ad;
+}
+.app.red-alert .tag-slot {
+  background: #90112e;
+}
+.app.red-alert.dark .tag-slot {
+  background: #a5221b;
+}
+.app.red-alert .lanyard > span {
+  background: #56212c;
+  border-left-color: #873447;
+}
+.app.red-alert .lanyard > span + span {
+  background: #7d2d3d;
+  border-right-color: #a1495a;
+}
+.app.red-alert .lanyard-clip {
+  border-color: #e4b3b3;
+}
+.app.red-alert .live-badge {
+  color: var(--blue);
+  background: var(--blue-tint);
+}
+.app.red-alert .live-badge > span {
+  background: var(--blue);
+}
+@media (max-width: 1000px) {
+  .app .hero-content {
+    width: 58%;
+    padding-left: 32px;
+  }
+  .app .hanging-scene {
+    width: 43%;
+  }
+  .app .hanging-object {
+    left: 11%;
+  }
+  .app .cig-cluster {
+    right: 8%;
+    transform: scale(0.6);
+  }
+  .app .page-heading h1 {
+    font-size: 52px;
+  }
+  .app .page-heading p {
+    max-width: 330px;
+    font-size: 13px;
+  }
+  .app .card {
+    padding: 24px;
+  }
+  .app .card h2 {
+    font-size: 21px;
+  }
+  .app .card-buttons .button {
+    padding: 0 13px;
+    font-size: 9px;
+  }
+  .app .schedule-pills {
+    gap: 6px;
+  }
+  .app .schedule-pills button {
+    font-size: 9px;
+    padding: 0 10px;
+  }
+  .app .break-task {
+    font-size: 0;
+    width: 28px;
+    padding: 0;
+  }
+  .app .break-task svg {
+    width: 13px;
+  }
+  .app .nav-links {
+    gap: 24px;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 760px) {
+  .app {
+    padding: 16px 20px 0;
+  }
+  .app .navbar {
+    --nav-offset: 14px;
+    height: 70px;
+    top: 14px;
+    padding: 10px 18px 10px 23px;
+    flex-wrap: wrap;
+    border-radius: 34px;
+  }
+  .app .brand {
+    font-size: 28px;
+  }
+  .app .nav-actions {
+    margin-left: auto;
+    gap: 5px;
+  }
+  .app .theme-button {
+    margin-right: 0;
+  }
+  .app .menu-toggle {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+  }
+  .app .target-pill,
+  .app .notification-button {
+    display: none;
+  }
+  .app .nav-links {
+    display: none;
+  }
+  .app .navbar.menu-open {
+    height: auto;
+  }
+  .app .navbar.menu-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    order: 3;
+    align-items: stretch;
+    border-top: 1px solid var(--border);
+    padding: 10px 0 4px;
+    margin: 10px 0 0;
+  }
+  .app .navbar.menu-open .nav-links button {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+    font-size: 13px;
+  }
+  .app .nav-links button.active {
+    background: var(--raised);
+    border-radius: 11px;
+  }
+  .app .nav-links button.active::after {
+    display: none;
+  }
+  .nav-links .tiny-dot {
+    margin-left: auto;
+  }
+  .app .dashboard-topline {
+    padding: 17px 3px 15px;
+  }
+  .dashboard-topline > span {
+    font-size: 6px;
+    letter-spacing: 1px;
+    gap: 6px;
+  }
+  .prototype-tools > summary {
+    font-size: 9px;
+    gap: 6px;
+  }
+  .app .hero-card {
+    flex-direction: column;
+    border-radius: 32px;
+    min-height: 0;
+  }
+  .app .hero-card .hanging-scene {
+    position: relative;
+    order: 0;
+    width: 100%;
+    height: 364px;
+    top: auto;
+    right: auto;
+    flex-shrink: 0;
+  }
+  .app .hero-card .hanging-object {
+    width: 210px;
+    height: 430px;
+    top: -68px;
+    left: calc(50% - 116px);
+  }
+  .app .hero-card .lanyard {
+    height: 135px;
+  }
+  .app .hero-card .lanyard > span {
+    left: 86px;
+    height: 138px;
+  }
+  .app .hero-card .lanyard > span + span {
+    left: 103px;
+  }
+  .app .hero-card .lanyard-brand {
+    top: 84px;
+    left: 85px;
+    font-size: 11px;
+  }
+  .app .hero-card .lanyard-clip {
+    left: 86px;
+    top: 116px;
+    width: 37px;
+    height: 40px;
+  }
+  .app .hero-card .lanyard-clip > i {
+    top: 27px;
+    left: 14px;
+  }
+  .app .hero-card .quota-tag {
+    width: 210px;
+    height: 281px;
+    padding: 27px 12px 12px;
+    border-radius: 17px;
+  }
+  .app .hero-card .tag-face {
+    min-height: 160px;
+    padding: 16px 13px;
+  }
+  .app .hero-card .tag-number {
+    font-size: 77px;
+  }
+  .app .hero-card .tag-label {
+    font-size: 6.5px;
+    letter-spacing: 1px;
+  }
+  .app .hero-card .tag-top {
+    margin-bottom: 9px;
+  }
+  .app .hero-card .tag-top > span {
+    font-size: 12px;
+  }
+  .app .hero-card .tag-bottom {
+    margin-top: 11px;
+  }
+  .app .hero-card .tag-bottom > span:first-child {
+    font-size: 8px;
+  }
+  .app .hero-card .tag-bottom > span:first-child::first-line {
+    font-size: 14px;
+  }
+  .app .hero-card .tag-star svg {
+    width: 24px;
+    height: 24px;
+  }
+  .app .hero-card .scene-orbit {
+    width: 280px;
+    height: 280px;
+    left: 50%;
+    top: 43%;
+  }
+  .app .hero-card .orbit-two {
+    width: 370px;
+    height: 370px;
+  }
+  .app .hero-card .plus-one {
+    left: 10%;
+    top: 29%;
+  }
+  .app .hero-card .plus-two {
+    right: 9%;
+    bottom: 27%;
+  }
+  .app .hero-card .cig-cluster {
+    top: 50%;
+    right: 7%;
+    transform: scale(0.45);
+  }
+  .app .hero-card .drag-hint {
+    left: 23%;
+    bottom: 4px;
+    font-size: 11px;
+  }
+  .app .hero-card .hero-content {
+    display: flex;
+    width: 100%;
+    padding: 24px 28px 30px;
+    order: 1;
+    pointer-events: auto;
+  }
+  .app .hero-content > * {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .app .hero-content .page-heading {
+    margin-bottom: 25px;
+  }
+  .app .hero-greeting {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .app .page-heading h1 {
+    font-size: clamp(40px, 11vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+    margin-top: 11px;
+    margin-bottom: 17px;
+  }
+  .app .page-heading p {
+    max-width: 100%;
+    font-size: 13px;
+    line-height: 1.85;
+  }
+  .app .hero-content > .section-label {
+    font-size: 6.5px;
+    letter-spacing: 1px;
+  }
+  .app .hero-content h2 {
+    font-size: 15px;
+    margin-top: 13px;
+  }
+  .app .hero-content .quota-display {
+    font-size: 59px;
+    gap: 9px;
+    margin-top: 7px;
+    margin-bottom: 13px;
+  }
+  .app .hero-content .quota-display.long-count {
+    font-size: 47px;
+  }
+  .app .hero-content .quota-divider {
+    font-size: 39px;
+  }
+  .app .hero-content .quota-unit {
+    font-size: 13px;
+    margin-left: 2px;
+  }
+  .app .hero-content .hero-caption {
+    font-size: 12px;
+    max-width: 100%;
+    align-self: auto;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .app .hero-content .quota-track {
+    margin-top: 20px;
+    width: 100%;
+  }
+  .app .hero-content .track-label {
+    width: 100%;
+    font-size: 8px;
+    margin-top: 8px;
+  }
+  .app .hero-content > .button {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 23px;
+    padding: 0 20px;
+    font-size: 11px;
+    min-height: 50px;
+    gap: 10px;
+  }
+  .app .hero-content .hero-footnote {
+    font-size: 7px;
+    justify-content: flex-start;
+    margin-top: 14px;
+  }
+  .app .hero-corner-label {
+    display: none;
+  }
+  .section-heading {
+    margin: 35px 3px 18px;
+  }
+  .section-heading .eyebrow {
+    font-size: 7px;
+  }
+  .section-heading h2 {
+    font-size: 27px;
+    letter-spacing: -1px;
+  }
+  .section-date {
+    display: none;
+  }
+  .app .dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .app .card {
+    padding: 25px;
+    border-radius: 29px;
+  }
+  .app .card h2 {
+    font-size: 23px;
+    line-height: 1.3;
+  }
+  .app .card-description {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .app .card-topline {
+    margin-bottom: 22px;
+  }
+  .app .countdown-number {
+    font-size: 43px;
+    padding-right: 24px;
+  }
+  .app .countdown-target {
+    font-size: 10px;
+    padding-left: 21px;
+  }
+  .app .schedule-pills {
+    gap: 6px;
+  }
+  .app .schedule-pills button {
+    padding: 0 7px;
+    min-width: 0;
+    font-size: 10px;
+    flex: 1;
+  }
+  .app .schedule-pills button > span {
+    display: none;
+  }
+  .app .card-buttons .button {
+    padding: 0 13px;
+    font-size: 9px;
+    gap: 6px;
+  }
+  .app .card-buttons .primary > svg {
+    display: block;
+    width: 13px;
+  }
+  .app .task-row {
+    gap: 11px;
+    min-height: 74px;
+  }
+  .app .task-text > span {
+    font-size: 11px;
+  }
+  .app .task-text > small {
+    font-size: 8px;
+    gap: 4px;
+  }
+  .app .break-task {
+    font-size: 7px;
+    width: auto;
+    padding: 0 8px;
+  }
+  .app .break-task svg {
+    width: 11px;
+  }
+  .app .task-footnote {
+    font-size: 9px;
+  }
+  .app .bottom-note {
+    font-size: 10px;
+    max-width: 100%;
+    gap: 9px;
+    margin: 24px 5px 28px;
+  }
+  .bottom-note > svg {
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .note-small,
+  .note-line {
+    display: none;
+  }
+  .app .floating-checkin {
+    bottom: 14px;
+    padding: 8px;
+    width: 390px;
+    max-width: calc(100% - 22px);
+    gap: 8px;
+  }
+  .app .checkin-moon {
+    width: 30px;
+    height: 37px;
+    background: transparent;
+  }
+  .app .floating-checkin > div {
+    padding-right: 0;
+  }
+  .app .floating-checkin strong {
+    font-size: 8px;
+    max-width: 115px;
+    line-height: 1.6;
+    white-space: normal;
+  }
+  .app .floating-checkin > div > span {
+    display: none;
+  }
+  .app .floating-checkin > button {
+    padding: 0 14px;
+    font-size: 9px;
+    gap: 9px;
+    min-height: 44px;
+  }
+  .app .site-footer {
+    padding: 22px 4px 120px;
+  }
+  .app .site-footer .footer-tagline {
+    display: block;
+    font-size: 8px;
+    margin: 5px 0 0;
+    letter-spacing: -0.1px;
+  }
+  .app .site-footer > span:last-child {
+    font-size: 5px;
+    letter-spacing: 0.8px;
+  }
+  .app .recovery-banner {
+    --recovery-scroll-top: 14px;
+    top: 96px;
+    padding: 13px;
+    gap: 8px;
+  }
+  .app .recovery-banner strong {
+    font-size: 9px;
+  }
+  .app .recovery-deadline time {
+    font-size: 15px;
+  }
+  .app .subpage-back {
+    margin: 14px 2px 22px;
+  }
+  .app .center-heading h1 {
+    font-size: 34px;
+    line-height: 1.15;
+    letter-spacing: -1.4px;
+  }
+  .app .center-heading > p {
+    font-size: 12px;
+  }
+  .app .mission-card {
+    padding: 25px 18px;
+  }
+  .app .mission-timer {
+    font-size: 55px;
+  }
+  .app .big-button {
+    padding: 0 19px;
+    font-size: 12px;
+    gap: 9px;
+  }
+  .app .checkin-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 0 35px;
+  }
+  .app .checkin-intro h1 {
+    font-size: 37px;
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+  .app .checkin-intro h1 br {
+    display: none;
+  }
+  .app .checkin-intro > p {
+    font-size: 12px;
+  }
+  .app .checkin-quote,
+  .app .checkin-duration {
+    display: none;
+  }
+  .app .checkin-card {
+    width: 100%;
+  }
+  .app .activity-option {
+    font-size: 10px;
+    padding: 14px 10px;
+    gap: 8px;
+  }
+  .app .step-content > p {
+    font-size: 11px;
+  }
+  .app .notification-layout {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-bottom: 35px;
+  }
+  .app .notification-settings {
+    order: 2;
+  }
+  .app .lockscreen {
+    width: min(100%, 340px);
+    justify-self: center;
+  }
+  .app .modal-card {
+    padding: 29px 25px;
+  }
+  .app .modal-card > p {
+    font-size: 12px;
+  }
+  .app .modal-card h2 {
+    font-size: 28px;
+    line-height: 1.25;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .prototype-tools > summary > svg {
+    transition: none;
+  }
+}
