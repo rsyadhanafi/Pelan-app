@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/icon-180.png" alt="Logo pelan." width="110" />
-  <h1>pelan.</h1>
-  <p><strong>Aplikasi Progressive Web App (PWA) untuk membantu menjaga ritme, kesadaran diri, dan pemulihan kebiasaan secara bertahap dan terukur.</strong></p>
+  <h1>Pelan.app</h1>
+  <p><strong>Aplikasi yang membantu menjaga ritme, kesadaran diri, dan pemulihan kebiasaan merokok secara bertahap dan terukur.</strong></p>
 
   <p>
     <a href="https://pelanid.vercel.app"><strong>🌐 Buka Aplikasi Live (pelanid.vercel.app)</strong></a>
@@ -15,11 +15,11 @@
 
 ---
 
-## Tentang **pelan.**
+## Tentang **Pelan**
 
-**pelan.** dirancang sebagai ruang pendamping harian yang tenang, minimalis, dan bebas penghakiman (*non-judgmental*) untuk membantu pengguna membangun kembali kendali diri, memantau pola kebiasaan, serta mengantisipasi momen rawan (*vulnerable hours*) sebelum impuls terjadi.
+**Pelan** dirancang sebagai ruang pendamping harian yang tenang, minimalis, dan bebas penghakiman (*non-judgmental*) untuk membantu pengguna membangun kembali kendali diri, memantau pola kebiasaan, serta mengantisipasi momen rawan merokok (*vulnerable hours*) sebelum impuls terjadi.
 
-Alih-alih menuntut perubahan instan yang melelahkan, **pelan.** berfokus pada langkah kecil yang konsisten—menggabungkan pelacakan harian (*daily tracking*), ruang refleksi pemulihan, serta sistem pengingat proaktif berbasis Web Push langsung ke ponsel.
+Alih-alih menuntut Cold-Turkey yang agak boring dan susah, **pelan.** berfokus pada langkah kecil yang konsisten—menggabungkan pelacakan harian (*daily tracking*), ruang recovery, serta sistem pengingat berbasis Web Push langsung ke ponsel.
 
 ---
 
@@ -27,13 +27,13 @@ Alih-alih menuntut perubahan instan yang melelahkan, **pelan.** berfokus pada la
 
 Karena dibangun menggunakan teknologi **Progressive Web App (PWA)**, **pelan.** dapat dipasang langsung ke layar utama (*Home Screen*) ponsel Anda dengan tampilan layar penuh layaknya aplikasi native, ringan, dan hemat penyimpanan.
 
-### 📱 Pengguna Android (Google Chrome)
+### Android User (Google Chrome)
 1. Buka **[https://pelanid.vercel.app](https://pelanid.vercel.app)** melalui browser **Google Chrome**.
 2. Ketuk ikon **titik tiga (`⋮`)** di pojok kanan atas layar.
 3. Pilih **Tambahkan ke Layar Utama** (*Add to Home Screen*) atau **Instal Aplikasi** (*Install App*).
 4. Konfirmasi dengan mengetuk **Instal**, dan ikon **pelan.** akan muncul di layar utama HP Anda.
 
-### 🍎 Pengguna iPhone / iPad (Safari)
+### iOS/iPad User (Safari)
 1. Buka **[https://pelanid.vercel.app](https://pelanid.vercel.app)** melalui browser **Safari**.
 2. Ketuk ikon **Bagikan / Share** (kotak dengan panah ke atas di bagian bawah layar).
 3. Gulir ke bawah dan pilih **Tambahkan ke Layar Utama** (*Add to Home Screen*).
