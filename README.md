@@ -4,7 +4,7 @@
   <p><strong>Aplikasi yang membantu menjaga ritme, kesadaran diri, dan pemulihan kebiasaan merokok secara bertahap dan terukur.</strong></p>
 
   <p>
-    <a href="https://pelanid.vercel.app"><strong>🌐 Buka Aplikasi Live (pelanid.vercel.app)</strong></a>
+    <a href="https://pelanid.vercel.app"><strong>🌐 Buka Pelan.app</strong></a>
   </p>
 
   ![React](https://img.shields.io/badge/React-Vite-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
